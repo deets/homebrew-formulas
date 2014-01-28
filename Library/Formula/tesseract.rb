@@ -41,6 +41,7 @@ class Tesseract < Formula
     # explicitly state leptonica header location, as the makefile defaults to /usr/local/include,
     # which doesn't work for non-default homebrew location
     ENV['LIBLEPT_HEADERSDIR'] = HOMEBREW_PREFIX/"include"
+    ENV['CXXFLAGS'] = "-stdlib=libc++"
 
     system './autogen.sh' if build.head?
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"

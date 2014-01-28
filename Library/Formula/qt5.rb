@@ -52,6 +52,7 @@ class Qt5 < Formula
     ENV.universal_binary if build.universal?
     args = ["-prefix", prefix,
             "-system-zlib",
+            "-c++11",
             "-qt-libpng", "-qt-libjpeg",
             "-confirm-license", "-opensource",
             "-nomake", "examples",
